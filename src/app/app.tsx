@@ -1,20 +1,48 @@
-import type { ComponentProps } from "react"
+import { useEffect, useState } from 'react'
+import { fetchJSON, getErrorMessage } from '../shared/fetchJSON.ts'
 
-const mergeClass = (...classes: string[]) => {
-	return classes.filter(Boolean).join(' ')
+interface User { id: string, name: string, email: string }
+
+const usersUrl = 'https://jsonplaceholder.typicode.com/users'
+
+async function getUsers(): Promise<User[]> {
+  return fetchJSON<User[]>(usersUrl)
 }
 
-const Button = ({ className = '', children }: ComponentProps<'button'> & { className?: string }) => {
-	return <button className={mergeClass("bg-emerald-500 bg-blue-600", className)}>Button</button>
+export function App() {
+  const [users, setUsers] = useState<User[] | []>([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    getUsers()
+      .then(users => setUsers(users))
+      .catch((error: unknown) => {
+        console
+          .error(`Error fetching users: ${getErrorMessage(error)}`)
+      })
+      .finally(() => setIsLoading(false))
+  }, [])
+
+  if (isLoading) {
+    return <div>Loading users...</div>
+  }
+
+  return (
+    <div>
+      <ul className="grid justify-center gap-4 ">
+        {users.map(user => (
+          <li key={user.id}>
+            <div className="border px-2 py-1">
+              <h3>
+                {user.name}
+              </h3>
+              <p>
+                {user.email}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 }
-
-export const App = () => {
-
-
-	return (
-		<div className="h-screen flex items-center justify-center">
-			<Button>Button</Button>
-		</div>
-	)
-}
-
