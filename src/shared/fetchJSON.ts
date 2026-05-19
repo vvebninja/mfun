@@ -1,7 +1,9 @@
 export class HTTPError extends Error {
-  constructor(message: string, public response: Response) {
+  response: Response
+  constructor(message: string, response: Response) {
     super(message)
     this.name = 'HTTPError'
+    this.response = response
   }
 
   get status() {
@@ -11,7 +13,7 @@ export class HTTPError extends Error {
 
 export function getErrorMessage(error: unknown): string {
   if (error instanceof HTTPError) {
-    return `HTTP ${error.status}: ${error.message}`
+    return ` ${error.status}: ${error.name}`
   }
 
   if (error instanceof Error) {
@@ -21,17 +23,20 @@ export function getErrorMessage(error: unknown): string {
   return String(error)
 }
 
+export function isAbortError(error: unknown): boolean {
+  return error instanceof DOMException && error.name === 'AbortError'
+}
+
 export async function fetchJSON<T>(url: string, options: RequestInit = {}): Promise<T> {
   const response = await fetch(url, {
     ...options,
     headers: {
-      Accept: 'application/json', // Accept instead of Content-Type is more correct for GET requests
       ...options.headers,
     },
   })
 
   if (!response.ok) {
-    throw new HTTPError(`HTTP ${response.status}`, response)
+    throw new HTTPError(String(response.status), response)
   }
 
   return response.json() as Promise<T>
