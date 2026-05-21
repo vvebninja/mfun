@@ -1,13 +1,5 @@
 import { fetchJSON } from '../fetchJSON.ts'
-
-export function getRequiredEnv<K extends keyof ImportMetaEnv>(name: K): ImportMetaEnv[K] {
-  const value = import.meta.env[name]
-
-  if (!value) {
-    throw new Error(`Missing required environment variable: ${name}`)
-  }
-  return value
-}
+import { getRequiredEnv } from '../model/config.ts'
 
 const publicTracksEndpoints = {
   all: '/playlists/tracks', // Get list of all tracks in all playlists.
@@ -28,7 +20,7 @@ export async function fetchTracksJSON<T>(endpoint: string, options: RequestInit 
     ...options,
     headers: {
       ...options.headers,
-      'api-key': '9235fd4a-2acf-4edd-af3c-b9c79722000d',
+      'api-key': getRequiredEnv('VITE_API_KEY'),
     },
   })
 }
