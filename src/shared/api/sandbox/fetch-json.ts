@@ -27,7 +27,10 @@ export function isAbortError(error: unknown): boolean {
   return error instanceof DOMException && error.name === 'AbortError'
 }
 
-export async function fetchJSON<T>(url: string, options: RequestInit = {}): Promise<T> {
+export async function fetchJSON<T>(
+  url: string,
+  options: RequestInit = {},
+): Promise<T> {
   const response = await fetch(url, {
     ...options,
     headers: {

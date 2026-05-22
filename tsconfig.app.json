@@ -13,14 +13,14 @@
     "allowImportingTsExtensions": true,
 
     "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
     /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noEmit": true,
     "verbatimModuleSyntax": true,
     "erasableSyntaxOnly": true,
-    "skipLibCheck": true,
-    "noUncheckedIndexedAccess": true
+    "skipLibCheck": true
   },
   "include": ["src"]
 }

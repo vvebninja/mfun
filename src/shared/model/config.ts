@@ -1,4 +1,6 @@
-export function getRequiredEnv<K extends keyof ImportMetaEnv>(name: K): ImportMetaEnv[K] {
+export function getRequiredEnv<K extends keyof ImportMetaEnv>(
+  name: K,
+): ImportMetaEnv[K] {
   const value = import.meta.env[name]
 
   if (!value) {

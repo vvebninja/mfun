@@ -1,9 +1,10 @@
-import { fetchJSON } from '../fetchJSON.ts'
-import { getRequiredEnv } from '../model/config.ts'
+import { getRequiredEnv } from '../../model/config.ts'
+import { fetchJSON } from './fetch-json.ts'
 
 const publicTracksEndpoints = {
   all: '/playlists/tracks', // Get list of all tracks in all playlists.
-  trackDetailsById(trackId: string) { // Get track details by ID
+  trackDetailsById(trackId: string) {
+    // Get track details by ID
     return `/playlists/tracks/${encodeURIComponent(trackId)}`
   },
 }
@@ -15,7 +16,10 @@ function buildUrl(baseUrl: string, endpoint: string) {
   return new URL(cleanEndpoint, cleanBase).toString()
 }
 
-export async function fetchTracksJSON<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+export async function fetchTracksJSON<T>(
+  endpoint: string,
+  options: RequestInit = {},
+): Promise<T> {
   return fetchJSON(buildUrl(getRequiredEnv('VITE_API_BASE_URL'), endpoint), {
     ...options,
     headers: {

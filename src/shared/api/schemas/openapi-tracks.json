@@ -36,9 +36,7 @@
           }
         ],
         "summary": "Get my playlists",
-        "tags": [
-          "Playlists Owner"
-        ]
+        "tags": ["Playlists Owner"]
       }
     },
     "/playlists": {
@@ -85,9 +83,7 @@
           }
         ],
         "summary": "Create a new playlist",
-        "tags": [
-          "Playlists Owner"
-        ]
+        "tags": ["Playlists Owner"]
       },
       "get": {
         "description": "Query parameters must conform to the **GetPlaylistsRequestPayload** schema.",
@@ -133,10 +129,7 @@
             "schema": {
               "default": "addedAt",
               "type": "string",
-              "enum": [
-                "addedAt",
-                "likesCount"
-              ]
+              "enum": ["addedAt", "likesCount"]
             }
           },
           {
@@ -147,10 +140,7 @@
             "schema": {
               "default": "desc",
               "type": "string",
-              "enum": [
-                "asc",
-                "desc"
-              ]
+              "enum": ["asc", "desc"]
             }
           },
           {
@@ -206,9 +196,7 @@
           }
         },
         "summary": "Retrieve all playlists",
-        "tags": [
-          "Playlists Public"
-        ],
+        "tags": ["Playlists Public"],
         "security": [
           {
             "api-key": []
@@ -265,9 +253,7 @@
           }
         ],
         "summary": "Update a playlist",
-        "tags": [
-          "Playlists Owner"
-        ]
+        "tags": ["Playlists Owner"]
       },
       "delete": {
         "operationId": "PlaylistsController_deletePlaylist",
@@ -307,9 +293,7 @@
           }
         ],
         "summary": "Delete a playlist",
-        "tags": [
-          "Playlists Owner"
-        ]
+        "tags": ["Playlists Owner"]
       },
       "get": {
         "operationId": "PlaylistsPublicController_getPlaylistById",
@@ -340,9 +324,7 @@
           }
         },
         "summary": "Get a single playlist by ID",
-        "tags": [
-          "Playlists Public"
-        ],
+        "tags": ["Playlists Public"],
         "security": [
           {
             "api-key": []
@@ -396,9 +378,7 @@
           }
         ],
         "summary": "Reorder playlists",
-        "tags": [
-          "Playlists Owner"
-        ]
+        "tags": ["Playlists Owner"]
       }
     },
     "/playlists/{playlistId}/images/main": {
@@ -428,9 +408,7 @@
                     "description": "Maximum size 1 MB; minimum height 500px; image must be square"
                   }
                 },
-                "required": [
-                  "file"
-                ]
+                "required": ["file"]
               }
             }
           }
@@ -468,9 +446,7 @@
           }
         ],
         "summary": "Upload playlist cover",
-        "tags": [
-          "Playlists Owner"
-        ]
+        "tags": ["Playlists Owner"]
       },
       "delete": {
         "operationId": "PlaylistsController_deleteTrackCover",
@@ -510,9 +486,7 @@
           }
         ],
         "summary": "Delete playlist cover",
-        "tags": [
-          "Playlists Owner"
-        ]
+        "tags": ["Playlists Owner"]
       }
     },
     "/playlists/tracks": {
@@ -560,10 +534,7 @@
             "schema": {
               "default": "publishedAt",
               "type": "string",
-              "enum": [
-                "publishedAt",
-                "likesCount"
-              ]
+              "enum": ["publishedAt", "likesCount"]
             }
           },
           {
@@ -574,10 +545,7 @@
             "schema": {
               "default": "desc",
               "type": "string",
-              "enum": [
-                "asc",
-                "desc"
-              ]
+              "enum": ["asc", "desc"]
             }
           },
           {
@@ -639,10 +607,7 @@
             "schema": {
               "default": "offset",
               "type": "string",
-              "enum": [
-                "offset",
-                "cursor"
-              ]
+              "enum": ["offset", "cursor"]
             }
           },
           {
@@ -679,9 +644,7 @@
           }
         },
         "summary": "Get list of all tracks in all playlists.",
-        "tags": [
-          "Tracks Public"
-        ],
+        "tags": ["Tracks Public"],
         "security": [
           {
             "api-key": []
@@ -719,9 +682,7 @@
           }
         },
         "summary": "Get list of tracks in a playlist",
-        "tags": [
-          "Tracks Public"
-        ],
+        "tags": ["Tracks Public"],
         "security": [
           {
             "api-key": []
@@ -759,9 +720,7 @@
           }
         },
         "summary": "Get track details by ID",
-        "tags": [
-          "Tracks Public"
-        ],
+        "tags": ["Tracks Public"],
         "security": [
           {
             "api-key": []
@@ -826,9 +785,7 @@
           }
         ],
         "summary": "Update track information",
-        "tags": [
-          "Tracks Owner"
-        ]
+        "tags": ["Tracks Owner"]
       },
       "delete": {
         "operationId": "TracksController_deleteTrackCompletely",
@@ -868,9 +825,7 @@
           }
         ],
         "summary": "Permanently delete a track",
-        "tags": [
-          "Tracks Owner"
-        ]
+        "tags": ["Tracks Owner"]
       }
     },
     "/playlists/tracks/{trackId}/likes": {
@@ -916,9 +871,7 @@
           }
         ],
         "summary": "Like or toggle like on a track",
-        "tags": [
-          "Tracks Public"
-        ]
+        "tags": ["Tracks Public"]
       }
     },
     "/playlists/tracks/{trackId}/dislikes": {
@@ -964,9 +917,7 @@
           }
         ],
         "summary": "Dislike or toggle dislike on a track",
-        "tags": [
-          "Tracks Public"
-        ]
+        "tags": ["Tracks Public"]
       }
     },
     "/playlists/tracks/{trackId}/reactions": {
@@ -1006,9 +957,7 @@
           }
         ],
         "summary": "Remove user reaction from a track",
-        "tags": [
-          "Tracks Public"
-        ]
+        "tags": ["Tracks Public"]
       }
     },
     "/playlists/{playlistId}/likes": {
@@ -1054,9 +1003,7 @@
           }
         ],
         "summary": "Like a playlist",
-        "tags": [
-          "Playlists Public"
-        ]
+        "tags": ["Playlists Public"]
       }
     },
     "/playlists/{playlistId}/dislikes": {
@@ -1102,9 +1049,7 @@
           }
         ],
         "summary": "Dislike a playlist",
-        "tags": [
-          "Playlists Public"
-        ]
+        "tags": ["Playlists Public"]
       }
     },
     "/playlists/{playlistId}/reactions": {
@@ -1147,9 +1092,7 @@
           }
         ],
         "summary": "Remove user reaction from a playlist",
-        "tags": [
-          "Playlists Public"
-        ]
+        "tags": ["Playlists Public"]
       }
     },
     "/playlists/{playlistId}/tracks/{trackId}/reorder": {
@@ -1212,9 +1155,7 @@
           }
         ],
         "summary": "Reorder tracks in a playlist",
-        "tags": [
-          "Tracks Owner"
-        ]
+        "tags": ["Tracks Owner"]
       }
     },
     "/playlists/{playlistId}/relationships/tracks": {
@@ -1266,9 +1207,7 @@
           }
         ],
         "summary": "Add a track to your playlist",
-        "tags": [
-          "Tracks Owner"
-        ]
+        "tags": ["Tracks Owner"]
       }
     },
     "/playlists/{playlistId}/relationships/tracks/{trackId}": {
@@ -1318,9 +1257,7 @@
           }
         ],
         "summary": "Remove a track from your playlist",
-        "tags": [
-          "Tracks Owner"
-        ]
+        "tags": ["Tracks Owner"]
       }
     },
     "/playlists/tracks/{trackId}/actions/publish": {
@@ -1365,9 +1302,7 @@
           }
         ],
         "summary": "Publish a track (make it publicly available)",
-        "tags": [
-          "Tracks Owner"
-        ]
+        "tags": ["Tracks Owner"]
       }
     },
     "/playlists/tracks/{trackId}/cover": {
@@ -1398,9 +1333,7 @@
                     "format": "binary"
                   }
                 },
-                "required": [
-                  "cover"
-                ]
+                "required": ["cover"]
               },
               "examples": {
                 "jpeg": {
@@ -1449,9 +1382,7 @@
           }
         ],
         "summary": "Upload track cover",
-        "tags": [
-          "Tracks Owner"
-        ]
+        "tags": ["Tracks Owner"]
       },
       "delete": {
         "operationId": "TracksController_deleteTrackCover",
@@ -1491,9 +1422,7 @@
           }
         ],
         "summary": "Delete track cover",
-        "tags": [
-          "Tracks Owner"
-        ]
+        "tags": ["Tracks Owner"]
       }
     },
     "/playlists/tracks/upload": {
@@ -1516,10 +1445,7 @@
                     "format": "binary"
                   }
                 },
-                "required": [
-                  "title",
-                  "file"
-                ]
+                "required": ["title", "file"]
               }
             }
           }
@@ -1557,9 +1483,7 @@
           }
         ],
         "summary": "Create a track with MP3 file upload. Allowed file extensions: mp3, max size: 1 MB",
-        "tags": [
-          "Tracks Owner"
-        ]
+        "tags": ["Tracks Owner"]
       }
     },
     "/artists": {
@@ -1615,9 +1539,7 @@
           }
         ],
         "summary": "Create a new artist",
-        "tags": [
-          "Artists"
-        ]
+        "tags": ["Artists"]
       }
     },
     "/artists/search": {
@@ -1663,9 +1585,7 @@
           }
         ],
         "summary": "Search artists by substring",
-        "tags": [
-          "Artists"
-        ]
+        "tags": ["Artists"]
       }
     },
     "/artists/{id}": {
@@ -1707,9 +1627,7 @@
           }
         ],
         "summary": "Delete an artist by ID",
-        "tags": [
-          "Artists"
-        ]
+        "tags": ["Artists"]
       }
     },
     "/auth/oauth-redirect": {
@@ -1734,9 +1652,7 @@
           }
         },
         "summary": "OAuth redirect",
-        "tags": [
-          "Authentication"
-        ],
+        "tags": ["Authentication"],
         "security": [
           {
             "api-key": []
@@ -1791,9 +1707,7 @@
           }
         },
         "summary": "Log in using the code received after OAuth authorization redirect",
-        "tags": [
-          "Authentication"
-        ],
+        "tags": ["Authentication"],
         "security": [
           {
             "api-key": []
@@ -1838,9 +1752,7 @@
           }
         },
         "summary": "Refresh refresh/access token pair",
-        "tags": [
-          "Authentication"
-        ],
+        "tags": ["Authentication"],
         "security": [
           {
             "api-key": []
@@ -1868,9 +1780,7 @@
           }
         },
         "summary": "Deactivate refresh token",
-        "tags": [
-          "Authentication"
-        ],
+        "tags": ["Authentication"],
         "security": [
           {
             "api-key": []
@@ -1909,9 +1819,7 @@
           }
         ],
         "summary": "Get current user by access token",
-        "tags": [
-          "Authentication"
-        ]
+        "tags": ["Authentication"]
       }
     },
     "/auth/simple/login": {
@@ -1951,9 +1859,7 @@
           }
         },
         "summary": "Simple login with login/password, returns access and refresh tokens",
-        "tags": [
-          "Simple Authentication"
-        ],
+        "tags": ["Simple Authentication"],
         "security": [
           {
             "api-key": []
@@ -1998,9 +1904,7 @@
           }
         },
         "summary": "Simple refresh: rotate access and refresh tokens",
-        "tags": [
-          "Simple Authentication"
-        ],
+        "tags": ["Simple Authentication"],
         "security": [
           {
             "api-key": []
@@ -2028,9 +1932,7 @@
           }
         },
         "summary": "Simple logout: revoke refresh token",
-        "tags": [
-          "Simple Authentication"
-        ],
+        "tags": ["Simple Authentication"],
         "security": [
           {
             "api-key": []
@@ -2085,9 +1987,7 @@
           }
         ],
         "summary": "Create a new tag",
-        "tags": [
-          "Tags"
-        ]
+        "tags": ["Tags"]
       }
     },
     "/tags/search": {
@@ -2120,9 +2020,7 @@
           }
         },
         "summary": "Search tags by substring",
-        "tags": [
-          "Tags"
-        ],
+        "tags": ["Tags"],
         "security": [
           {
             "api-key": []
@@ -2159,9 +2057,7 @@
           }
         },
         "summary": "Delete a tag by ID",
-        "tags": [
-          "Tags"
-        ],
+        "tags": ["Tags"],
         "security": [
           {
             "api-key": []
@@ -2241,18 +2137,11 @@
             "description": "Name of the user"
           }
         },
-        "required": [
-          "id",
-          "name"
-        ]
+        "required": ["id", "name"]
       },
       "ImageSizeType": {
         "type": "string",
-        "enum": [
-          "original",
-          "thumbnail",
-          "medium"
-        ],
+        "enum": ["original", "thumbnail", "medium"],
         "description": "Type of the image size (e.g., original, thumbnail variants)"
       },
       "ImageVariant": {
@@ -2283,13 +2172,7 @@
             "description": "Full public URL of the image"
           }
         },
-        "required": [
-          "type",
-          "width",
-          "height",
-          "fileSize",
-          "url"
-        ]
+        "required": ["type", "width", "height", "fileSize", "url"]
       },
       "PlaylistImagesOutputDTO": {
         "type": "object",
@@ -2315,18 +2198,11 @@
             "description": "Original name of the tag"
           }
         },
-        "required": [
-          "id",
-          "name"
-        ]
+        "required": ["id", "name"]
       },
       "ReactionValue": {
         "type": "number",
-        "enum": [
-          0,
-          1,
-          -1
-        ],
+        "enum": [0, 1, -1],
         "description": "User reaction: 0 – guest or no reaction; 1 – like; -1 – dislike"
       },
       "PlaylistListItemAttributes": {
@@ -2429,11 +2305,7 @@
             "$ref": "#/components/schemas/PlaylistListItemAttributes"
           }
         },
-        "required": [
-          "id",
-          "type",
-          "attributes"
-        ]
+        "required": ["id", "type", "attributes"]
       },
       "GetMyPlaylistsOutput": {
         "type": "object",
@@ -2446,9 +2318,7 @@
             }
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "CreatePlaylistAttributes": {
         "type": "object",
@@ -2466,10 +2336,7 @@
             "nullable": true
           }
         },
-        "required": [
-          "title",
-          "description"
-        ]
+        "required": ["title", "description"]
       },
       "CreatePlaylistData": {
         "type": "object",
@@ -2482,10 +2349,7 @@
             "$ref": "#/components/schemas/CreatePlaylistAttributes"
           }
         },
-        "required": [
-          "type",
-          "attributes"
-        ]
+        "required": ["type", "attributes"]
       },
       "CreatePlaylistRequestPayload": {
         "type": "object",
@@ -2494,9 +2358,7 @@
             "$ref": "#/components/schemas/CreatePlaylistData"
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "PlaylistAttributes": {
         "type": "object",
@@ -2604,11 +2466,7 @@
             "$ref": "#/components/schemas/PlaylistAttributes"
           }
         },
-        "required": [
-          "id",
-          "type",
-          "attributes"
-        ]
+        "required": ["id", "type", "attributes"]
       },
       "GetPlaylistOutput": {
         "type": "object",
@@ -2617,9 +2475,7 @@
             "$ref": "#/components/schemas/PlaylistResource"
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "UpdatePlaylistAttributes": {
         "type": "object",
@@ -2647,11 +2503,7 @@
             "maxItems": 5
           }
         },
-        "required": [
-          "title",
-          "description",
-          "tagIds"
-        ]
+        "required": ["title", "description", "tagIds"]
       },
       "UpdatePlaylistData": {
         "type": "object",
@@ -2664,10 +2516,7 @@
             "$ref": "#/components/schemas/UpdatePlaylistAttributes"
           }
         },
-        "required": [
-          "type",
-          "attributes"
-        ]
+        "required": ["type", "attributes"]
       },
       "UpdatePlaylistRequestPayload": {
         "type": "object",
@@ -2676,9 +2525,7 @@
             "$ref": "#/components/schemas/UpdatePlaylistData"
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "ReorderPlaylistsRequestPayload": {
         "type": "object",
@@ -2690,9 +2537,7 @@
             "description": "ID of the playlist after which the current playlist should be inserted. Send null to place the playlist at the beginning of the list."
           }
         },
-        "required": [
-          "putAfterItemId"
-        ]
+        "required": ["putAfterItemId"]
       },
       "TrackImages": {
         "type": "object",
@@ -2728,19 +2573,13 @@
           },
           "sortBy": {
             "type": "string",
-            "enum": [
-              "publishedAt",
-              "likesCount"
-            ],
+            "enum": ["publishedAt", "likesCount"],
             "default": "publishedAt",
             "description": "Field by which to sort tracks"
           },
           "sortDirection": {
             "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ],
+            "enum": ["asc", "desc"],
             "default": "desc",
             "description": "Sort direction (ascending or descending)"
           },
@@ -2772,10 +2611,7 @@
           },
           "paginationType": {
             "type": "string",
-            "enum": [
-              "offset",
-              "cursor"
-            ],
+            "enum": ["offset", "cursor"],
             "default": "offset",
             "description": "Pagination type: \"offset\" for page-number pagination; \"cursor\" for keyset/seek-based pagination."
           },
@@ -2837,9 +2673,7 @@
             "description": "Any extra data"
           }
         },
-        "required": [
-          "status"
-        ]
+        "required": ["status"]
       },
       "JsonApiErrorDocument": {
         "type": "object",
@@ -2856,9 +2690,7 @@
             "description": "e.g. timestamp, path, traceId, etc."
           }
         },
-        "required": [
-          "errors"
-        ]
+        "required": ["errors"]
       },
       "TrackAttachment": {
         "type": "object",
@@ -2941,11 +2773,7 @@
           },
           "currentUserReaction": {
             "type": "number",
-            "enum": [
-              0,
-              1,
-              -1
-            ],
+            "enum": [0, 1, -1],
             "description": "0 – не залогинен или не реагировал; 1 – лайк; −1 – дизлайк"
           },
           "isPublished": {
@@ -2984,10 +2812,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "id",
-          "type"
-        ]
+        "required": ["id", "type"]
       },
       "ArtistsRelationship": {
         "type": "object",
@@ -2999,9 +2824,7 @@
             }
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "TrackRelationships": {
         "type": "object",
@@ -3010,9 +2833,7 @@
             "$ref": "#/components/schemas/ArtistsRelationship"
           }
         },
-        "required": [
-          "artists"
-        ]
+        "required": ["artists"]
       },
       "TrackListItemResource": {
         "type": "object",
@@ -3031,12 +2852,7 @@
             "$ref": "#/components/schemas/TrackRelationships"
           }
         },
-        "required": [
-          "id",
-          "type",
-          "attributes",
-          "relationships"
-        ]
+        "required": ["id", "type", "attributes", "relationships"]
       },
       "JsonApiMetaWithPagingAndCursor": {
         "type": "object",
@@ -3079,9 +2895,7 @@
             "description": "Name of the artist"
           }
         },
-        "required": [
-          "name"
-        ]
+        "required": ["name"]
       },
       "IncludedArtistOutput": {
         "type": "object",
@@ -3096,11 +2910,7 @@
             "$ref": "#/components/schemas/OmitTypeClass"
           }
         },
-        "required": [
-          "id",
-          "type",
-          "attributes"
-        ]
+        "required": ["id", "type", "attributes"]
       },
       "GetTrackListOutput": {
         "type": "object",
@@ -3121,11 +2931,7 @@
             }
           }
         },
-        "required": [
-          "data",
-          "meta",
-          "included"
-        ]
+        "required": ["data", "meta", "included"]
       },
       "TrackListItemAttributesForPlaylist": {
         "type": "object",
@@ -3165,11 +2971,7 @@
           },
           "currentUserReaction": {
             "type": "number",
-            "enum": [
-              0,
-              1,
-              -1
-            ],
+            "enum": [0, 1, -1],
             "nullable": true,
             "description": "User reaction: 0 – guest or no reaction; 1 – liked; -1 – disliked"
           },
@@ -3212,12 +3014,7 @@
             "$ref": "#/components/schemas/TrackRelationships"
           }
         },
-        "required": [
-          "id",
-          "type",
-          "attributes",
-          "relationships"
-        ]
+        "required": ["id", "type", "attributes", "relationships"]
       },
       "JsonApiMeta": {
         "type": "object",
@@ -3226,9 +3023,7 @@
             "type": "number"
           }
         },
-        "required": [
-          "totalCount"
-        ]
+        "required": ["totalCount"]
       },
       "GetTracksForPlaylistOutput": {
         "type": "object",
@@ -3249,11 +3044,7 @@
             }
           }
         },
-        "required": [
-          "data",
-          "meta",
-          "included"
-        ]
+        "required": ["data", "meta", "included"]
       },
       "ArtistRef": {
         "type": "object",
@@ -3267,10 +3058,7 @@
             "description": "Name of the artist"
           }
         },
-        "required": [
-          "id",
-          "name"
-        ]
+        "required": ["id", "name"]
       },
       "TrackDetailsAttributes": {
         "type": "object",
@@ -3354,11 +3142,7 @@
           },
           "currentUserReaction": {
             "type": "number",
-            "enum": [
-              0,
-              1,
-              -1
-            ],
+            "enum": [0, 1, -1],
             "description": "User reaction: 0 – guest or no reaction; 1 – user liked; -1 – user disliked"
           }
         },
@@ -3394,11 +3178,7 @@
             "$ref": "#/components/schemas/TrackDetailsAttributes"
           }
         },
-        "required": [
-          "id",
-          "type",
-          "attributes"
-        ]
+        "required": ["id", "type", "attributes"]
       },
       "GetTrackDetailsOutput": {
         "type": "object",
@@ -3407,9 +3187,7 @@
             "$ref": "#/components/schemas/TrackDetailsResource"
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "ReactionOutput": {
         "type": "object",
@@ -3419,11 +3197,7 @@
           },
           "value": {
             "type": "number",
-            "enum": [
-              0,
-              1,
-              -1
-            ]
+            "enum": [0, 1, -1]
           },
           "likes": {
             "type": "number"
@@ -3432,12 +3206,7 @@
             "type": "number"
           }
         },
-        "required": [
-          "objectId",
-          "value",
-          "likes",
-          "dislikes"
-        ]
+        "required": ["objectId", "value", "likes", "dislikes"]
       },
       "GetPlaylistsRequestPayload": {
         "type": "object",
@@ -3461,19 +3230,13 @@
           },
           "sortBy": {
             "type": "string",
-            "enum": [
-              "addedAt",
-              "likesCount"
-            ],
+            "enum": ["addedAt", "likesCount"],
             "default": "addedAt",
             "description": "Field by which to sort playlists"
           },
           "sortDirection": {
             "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ],
+            "enum": ["asc", "desc"],
             "default": "desc",
             "description": "Sort direction (ascending or descending)"
           },
@@ -3514,12 +3277,7 @@
             "type": "number"
           }
         },
-        "required": [
-          "totalCount",
-          "page",
-          "pageSize",
-          "pagesCount"
-        ]
+        "required": ["totalCount", "page", "pageSize", "pagesCount"]
       },
       "GetPlaylistsOutput": {
         "type": "object",
@@ -3535,10 +3293,7 @@
             "$ref": "#/components/schemas/JsonApiMetaWithPaging"
           }
         },
-        "required": [
-          "data",
-          "meta"
-        ]
+        "required": ["data", "meta"]
       },
       "ReorderTracksRequestPayload": {
         "type": "object",
@@ -3551,9 +3306,7 @@
             "example": "a1b2c3d4-e5f6-7890-abcd-1234567890ef"
           }
         },
-        "required": [
-          "putAfterItemId"
-        ]
+        "required": ["putAfterItemId"]
       },
       "UpdateTrackAttributes": {
         "type": "object",
@@ -3595,13 +3348,7 @@
             "description": "Array of artist IDs to associate with the track (up to 5)"
           }
         },
-        "required": [
-          "title",
-          "lyrics",
-          "releaseDate",
-          "tagIds",
-          "artistsIds"
-        ]
+        "required": ["title", "lyrics", "releaseDate", "tagIds", "artistsIds"]
       },
       "UpdateTrackData": {
         "type": "object",
@@ -3614,10 +3361,7 @@
             "$ref": "#/components/schemas/UpdateTrackAttributes"
           }
         },
-        "required": [
-          "type",
-          "attributes"
-        ]
+        "required": ["type", "attributes"]
       },
       "UpdateTrackRequestPayload": {
         "type": "object",
@@ -3626,9 +3370,7 @@
             "$ref": "#/components/schemas/UpdateTrackData"
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "AddTrackToPlaylistAttributes": {
         "type": "object",
@@ -3638,9 +3380,7 @@
             "description": "ID of the track to add to the playlist"
           }
         },
-        "required": [
-          "trackId"
-        ]
+        "required": ["trackId"]
       },
       "AddTrackToPlaylistData": {
         "type": "object",
@@ -3653,10 +3393,7 @@
             "$ref": "#/components/schemas/AddTrackToPlaylistAttributes"
           }
         },
-        "required": [
-          "type",
-          "attributes"
-        ]
+        "required": ["type", "attributes"]
       },
       "AddTrackToPlaylistRequestPayload": {
         "type": "object",
@@ -3665,9 +3402,7 @@
             "$ref": "#/components/schemas/AddTrackToPlaylistData"
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "CreateArtistAttributes": {
         "type": "object",
@@ -3679,9 +3414,7 @@
             "maxLength": 30
           }
         },
-        "required": [
-          "name"
-        ]
+        "required": ["name"]
       },
       "CreateArtistData": {
         "type": "object",
@@ -3694,10 +3427,7 @@
             "$ref": "#/components/schemas/CreateArtistAttributes"
           }
         },
-        "required": [
-          "type",
-          "attributes"
-        ]
+        "required": ["type", "attributes"]
       },
       "CreateArtistRequestPayload": {
         "type": "object",
@@ -3706,9 +3436,7 @@
             "$ref": "#/components/schemas/CreateArtistData"
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "LoginRequestPayload": {
         "type": "object",
@@ -3732,11 +3460,7 @@
             "description": "Refresh token lifetime: if true, 30 days; if false, 30 minutes. accessTokenTTL must not exceed the refresh token lifetime"
           }
         },
-        "required": [
-          "code",
-          "redirectUri",
-          "rememberMe"
-        ]
+        "required": ["code", "redirectUri", "rememberMe"]
       },
       "RefreshOutput": {
         "type": "object",
@@ -3748,10 +3472,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "refreshToken",
-          "accessToken"
-        ]
+        "required": ["refreshToken", "accessToken"]
       },
       "BadRequestException": {
         "type": "object",
@@ -3768,9 +3489,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "refreshToken"
-        ]
+        "required": ["refreshToken"]
       },
       "LogoutRequestPayload": {
         "type": "object",
@@ -3779,9 +3498,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "refreshToken"
-        ]
+        "required": ["refreshToken"]
       },
       "GetMeOutput": {
         "type": "object",
@@ -3793,10 +3510,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "userId",
-          "login"
-        ]
+        "required": ["userId", "login"]
       },
       "SimpleLoginRequestPayload": {
         "type": "object",
@@ -3815,11 +3529,7 @@
             "default": true
           }
         },
-        "required": [
-          "login",
-          "password",
-          "rememberMe"
-        ]
+        "required": ["login", "password", "rememberMe"]
       },
       "SimpleLoginOutput": {
         "type": "object",
@@ -3831,10 +3541,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "accessToken",
-          "refreshToken"
-        ]
+        "required": ["accessToken", "refreshToken"]
       },
       "SimpleRefreshRequestPayload": {
         "type": "object",
@@ -3844,9 +3551,7 @@
             "description": "Refresh token"
           }
         },
-        "required": [
-          "refreshToken"
-        ]
+        "required": ["refreshToken"]
       },
       "SimpleLogoutRequestPayload": {
         "type": "object",
@@ -3856,9 +3561,7 @@
             "description": "Refresh token to invalidate"
           }
         },
-        "required": [
-          "refreshToken"
-        ]
+        "required": ["refreshToken"]
       },
       "CreateTagAttributes": {
         "type": "object",
@@ -3870,9 +3573,7 @@
             "maxLength": 30
           }
         },
-        "required": [
-          "name"
-        ]
+        "required": ["name"]
       },
       "CreateTagData": {
         "type": "object",
@@ -3885,10 +3586,7 @@
             "$ref": "#/components/schemas/CreateTagAttributes"
           }
         },
-        "required": [
-          "type",
-          "attributes"
-        ]
+        "required": ["type", "attributes"]
       },
       "CreateTagRequestPayload": {
         "type": "object",
@@ -3897,9 +3595,7 @@
             "$ref": "#/components/schemas/CreateTagData"
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "TagAttributes": {
         "type": "object",
@@ -3909,9 +3605,7 @@
             "description": "Original name of the tag"
           }
         },
-        "required": [
-          "name"
-        ]
+        "required": ["name"]
       },
       "TagResource": {
         "type": "object",
@@ -3929,11 +3623,7 @@
             "$ref": "#/components/schemas/TagAttributes"
           }
         },
-        "required": [
-          "id",
-          "type",
-          "attributes"
-        ]
+        "required": ["id", "type", "attributes"]
       },
       "GetTagOutput": {
         "type": "object",
@@ -3942,9 +3632,7 @@
             "$ref": "#/components/schemas/TagResource"
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "GetTagsOutput": {
         "type": "object",
@@ -3957,9 +3645,7 @@
             }
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "BinaryFile": {
         "type": "string",
