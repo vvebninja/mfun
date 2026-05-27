@@ -1,5 +1,5 @@
-import type { TrackResource } from '../model/types'
-import { cn } from '../../../shared/lib/css.ts'
+import type { TrackResource } from '../model/types.d.ts'
+import { cn } from '@/shared/lib/css.ts'
 
 type TrackProps = {
   isSelected: boolean

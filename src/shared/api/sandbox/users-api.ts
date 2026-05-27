@@ -1,6 +1,6 @@
 import { fetchJSON } from './fetch-json.ts'
 
-export interface User {
+export type User = {
   id: string
   name: string
   email: string

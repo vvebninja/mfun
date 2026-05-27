@@ -1,3 +1,3 @@
-import type { ApiSchemas } from '../../../shared/api/schemas'
+import type { ApiSchemas } from '@/shared/api/schemas'
 
 export type TrackResource = ApiSchemas['TrackListItemResource']

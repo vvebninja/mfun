@@ -1,8 +1,8 @@
-import type { TrackResource } from '../model/types'
-import { cn } from '../../../shared/lib/css.ts'
+import type { TrackResource } from '../model/types.d.ts'
+import { cn } from '@/shared/lib/css.ts'
 import { useTrackDetails } from '../model/use-track-details.ts'
 
-interface TrackDetailsProps {
+type TrackDetailsProps = {
   id: TrackResource['id']
   className?: string
 }

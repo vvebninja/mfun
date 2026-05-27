@@ -1,32 +1,27 @@
-import type { TrackResource } from '../model/types'
-import { useState } from 'react'
+import type { TrackResource } from '../model/types.d.ts'
+import { useTracks } from '@/features/tracks/model/use-tracks.ts'
 import { Track } from './track.tsx'
 
-interface TracksListProps {
+type TracksListProps = {
   onTrackClick: (id: TrackResource['id']) => void
   selectedTrackId: TrackResource['id'] | null
 }
 
 export function TracksList({ onTrackClick, selectedTrackId }: TracksListProps) {
-  // const { tracks, isLoading, error } = useTracks()
-  const [tracks] = useState<TrackResource[]>(() => {
-    return JSON.parse(localStorage.getItem('tracks')!)
-  })
+  const { tracks, isLoading, error } = useTracks()
 
-  // if (isLoading) {
-  //   return (
-  //     <div>Loading...</div>
-  //   )
-  // }
-  //
-  // if (error) {
-  //   return (
-  //     <div>
-  //       Error:
-  //       {error.errors[0]?.detail}
-  //     </div>
-  //   )
-  // }
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return (
+      <div>
+        Error:
+        {JSON.stringify(error)}
+      </div>
+    )
+  }
 
   return (
     <ul>

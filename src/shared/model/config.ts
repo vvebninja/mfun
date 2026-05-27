@@ -10,6 +10,6 @@ export function getRequiredEnv<K extends keyof ImportMetaEnv>(
 }
 
 export const CONFIG = {
-  API_BASE_URL: getRequiredEnv('VITE_API_BASE_URL'),
+  API_BASE_URL: getRequiredEnv('VITE_MOCK_API_BASE_URL'),
   API_KEY: getRequiredEnv('VITE_API_KEY'),
 }

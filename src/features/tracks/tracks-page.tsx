@@ -1,6 +1,5 @@
-import type { TrackResource } from './model/types'
+import type { TrackResource } from './model/types.d.ts'
 import { useState } from 'react'
-import { TrackDetails } from './ui/details.tsx'
 import { TracksList } from './ui/list.tsx'
 import { TrackTitle } from './ui/title.tsx'
 
@@ -20,7 +19,6 @@ export function TracksPage() {
           onTrackClick={handleTrackClick}
           selectedTrackId={selectedTrackId}
         />
-        <TrackDetails id={selectedTrackId} />
       </div>
     </div>
   )
