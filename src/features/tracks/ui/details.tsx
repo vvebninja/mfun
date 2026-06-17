@@ -2,7 +2,7 @@ import type { TrackResource } from '../model/types.d.ts'
 import { cn } from '@/shared/lib/css.ts'
 import { useTrackDetails } from '../model/use-track-details.ts'
 
-type TrackDetailsProps = {
+interface TrackDetailsProps {
   id: TrackResource['id']
   className?: string
 }

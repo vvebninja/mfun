@@ -2,7 +2,7 @@ import type { TrackResource } from '../model/types.d.ts'
 import { useTracks } from '@/features/tracks/model/use-tracks.ts'
 import { Track } from './track.tsx'
 
-type TracksListProps = {
+interface TracksListProps {
   onTrackClick: (id: TrackResource['id']) => void
   selectedTrackId: TrackResource['id'] | null
 }

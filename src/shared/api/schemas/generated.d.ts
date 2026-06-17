@@ -3,7 +3,7 @@
  * Do not make direct changes to the file.
  */
 
-export type paths = {
+export interface paths {
   '/playlists/my': {
     parameters: {
       query?: never
@@ -606,7 +606,7 @@ export type paths = {
   }
 }
 export type webhooks = Record<string, never>
-export type components = {
+export interface components {
   schemas: {
     UserRef: {
       /** @description Unique identifier of the user */
@@ -1297,7 +1297,7 @@ export type components = {
   pathItems: never
 }
 export type $defs = Record<string, never>
-export type operations = {
+export interface operations {
   PlaylistsController_getMyPlaylists: {
     parameters: {
       query?: never
